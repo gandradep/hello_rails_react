@@ -3,9 +3,10 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Greeting from './components/Greeting';
 
 function App() {
-  return (<h1>Testing again</h1>);
+  return (<Greeting />);
 }
 
 ReactDOM.render(
