@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const apiUrl = 'http://127.0.0.1:5000/api/greetings/surprise_greeting';
 
-async function getRandomMessageAPI () {
+async function fetchApi () {
   return fetch(apiUrl)
           .then(response => response.json())
           .then(messageData => messageData.text);
@@ -10,7 +10,7 @@ async function getRandomMessageAPI () {
 
 export const randomGreeting = createAsyncThunk(
   'Messages/random',
-  getRandomMessageAPI
+  fetchApi
 );
 
 const greetingSlice = createSlice({
